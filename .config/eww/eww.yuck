@@ -1,0 +1,31 @@
+;;;;; Variables ;;;;;;
+
+(defvar eww "eww -c ~/.config/eww/")
+(defvar power-vert false)
+(defvar current-sound-value "wpctl get-volume @DEFAULT_SINK@ | awk '{print $2}'")
+(defvar show-calendar false)
+
+;;;;;;;;;;;;;;;;;;;;;
+
+;;;;; Deflistens ;;;;;
+    
+(deflisten workspaces :initial "[]" "sh ~/.config/eww/scripts/get-workspaces.sh")
+(deflisten current_workspace :initial "1" "sh ~/.config/eww/scripts/get-active-workspace.sh")
+
+;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;; Defpolls ;;;;;
+
+(defpoll wallpapers :interval "10m" "sh ~/.config/eww/scripts/get-wallpaper.sh")
+(defpoll hour :interval "1s" "date '+%H'")
+(defpoll minute :interval "1s" "date '+%M'")
+(defpoll day :interval "10s" "date +'%A'")
+(defpoll mon :interval "10s" "date +'%B'")
+
+;;;;;;;;;;;;;;;;;;;;
+
+;; Widgets ;;
+
+(include "./widgets/side-bar.yuck")
+(include "./widgets/wallpaper.yuck")
+(include "./widgets/power-menu.yuck")

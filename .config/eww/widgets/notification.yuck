@@ -1,0 +1,16 @@
+(defwidget notification [icon title message]
+  (box :class "notification"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+       :valign "center"
+       :spacing 10
+       (box :class "notif-icon"
+            :halign "center"
+            :valign "center"
+            (label :text icon))
+       (box :orientation "v"
+            :halign "fill"
+            :valign "center"
+            (label :class "notif-title" :text title)
+            (label :class "notif-message" :text message))))
