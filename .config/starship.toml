@@ -1,0 +1,36 @@
+
+add_newline = false
+
+format = """$username$hostname$directory$git_branch
+[┌──────────────────────────────────────────────](fg:#BB9AF7)
+[└─>](bold fg:#BB9AF7) """
+
+[character]
+vicmd_symbol = "[V](bold fg:#9ECE6A) "
+
+[username]
+style_root = "bold fg:#F7768E"
+style_user = "bold fg:#BB9AF7"
+format = "[$user]($style)[@](bold fg:#7DCFFF)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[$hostname](bold fg:#7AA2F7)"
+disabled = false
+
+[docker_context]
+format = " [🐋 $context](bold fg:#7DCFFF)"
+
+[directory]
+read_only = ""
+format = " [](fg:#7DCFFF) [$path](bold fg:#C0CAF5)"
+read_only_style = "bold fg:#F7768E"
+truncation_length = 5
+truncate_to_repo = false
+
+[git_branch]
+format = " [$symbol$branch](bold fg:#9ECE6A)"
+
+
