@@ -1,14 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Name of the EWW window
-WINDOW_NAME="wallpaper"
+set -euo pipefail
 
-# Check if the window is open
-if eww active-windows | grep -q "$WINDOW_NAME"; then
-  # If open, close it
-  eww close "$WINDOW_NAME"
-else
-  # If not open, open it
-  eww open "$WINDOW_NAME"
-fi
-
+qs ipc call wallpaper toggle
