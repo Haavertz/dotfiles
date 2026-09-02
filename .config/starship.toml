@@ -1,4 +1,3 @@
-
 add_newline = false
 
 format = """$username$hostname$directory$git_branch
@@ -20,6 +19,7 @@ ssh_only = false
 format = "[$hostname](bold fg:#7AA2F7)"
 disabled = false
 
+# Docker
 [docker_context]
 format = " [🐋 $context](bold fg:#7DCFFF)"
 
@@ -30,7 +30,29 @@ read_only_style = "bold fg:#F7768E"
 truncation_length = 5
 truncate_to_repo = false
 
+# Git
 [git_branch]
 format = " [$symbol$branch](bold fg:#9ECE6A)"
 
+[git_status]
+format = '([$all_status$ahead_behind](1))'
+conflicted = "󱐋"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+up_to_date = ""
+untracked = "?${count}"
+stashed = "$${count}"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "✘${count}"
+
+# Language Environments
+[package]
+style = "bold fg:#5E5E5E"
+
+[python]
+style = "bold fg:#5E5E5E"
+symbol = "[](bold yellow) "
 

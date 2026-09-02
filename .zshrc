@@ -28,7 +28,7 @@ alias c='z'
 
 # utility
 alias v='nvim'
-alias md='mkdir -p'
+alias mk='mkdir -p'
 alias diff='difft'
 alias h='herdr'
 alias va='source ./venv/bin/activate'
@@ -43,6 +43,7 @@ source <(fzf --zsh)
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
+zinit light Aloxaf/fzf-tab
 
 autoload -U compinit && compinit
 
@@ -50,6 +51,8 @@ autoload -U compinit && compinit
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
 
 # history
 HISTSIZE=5000
@@ -66,4 +69,10 @@ setopt hist_find_no_dups
 
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:c:*' fzf-preview 'ls --color $realpath'
 
+
+# opencode
+export PATH=/home/raj/.opencode/bin:$PATH
