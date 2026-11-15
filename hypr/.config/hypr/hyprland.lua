@@ -1,0 +1,10 @@
+require("conf.binds")
+require("conf.monitors")
+require("conf.env")
+require("conf.permissions")
+require("conf.autostart")
+require("conf.look")
+require("conf.input")
+require("conf.rules")
+-- pcall(require, "local")
+

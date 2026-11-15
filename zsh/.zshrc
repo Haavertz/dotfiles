@@ -3,6 +3,7 @@
 #
 
 if [[ $- == *i* ]]; then
+  # herdr
   fastfetch
 fi
 
@@ -19,19 +20,20 @@ source "${ZINIT_HOME}/zinit.zsh"
 # PATHs
 export PATH="$HOME/.local/bin:$PATH"
 
-# alias
+# utility
 alias ll='eza -lg --icons'
 alias lll='eza -lga --icons'
 alias ..='cd ..'
 alias cat='bat --style=header,grid'
 alias c='z'
-
-# utility
-alias v='nvim'
 alias mk='mkdir -p'
 alias diff='difft'
+
+# alias
+alias v='nvim'
 alias h='herdr'
 alias va='source ./venv/bin/activate'
+alias claudio='claude'
 
 # misc
 eval "$(starship init zsh)"
@@ -73,6 +75,3 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:c:*' fzf-preview 'ls --color $realpath'
 
-
-# opencode
-export PATH=/home/raj/.opencode/bin:$PATH

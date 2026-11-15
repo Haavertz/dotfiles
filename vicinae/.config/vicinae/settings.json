@@ -34,5 +34,13 @@
          "enabled": true
       }
    },
-   "providers": {}
+   "providers": {
+      "shortcuts": {
+         "entrypoints": {
+            "sct-8f02a5058858": {
+               "alias": "ys"
+            }
+         }
+      }
+   }
 }
