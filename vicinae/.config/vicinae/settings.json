@@ -13,7 +13,7 @@
    "encrypt_sensitive_data": true,
    "keybinding": "vim",
    "global_shortcuts": {
-      "toggle": "super+D"
+      "toggle": "super+R"
    },
    "font": {
       "normal": {
